@@ -18,8 +18,8 @@ if imc <= 18.5:
 elif imc > 18.5 and imc <= 24.9:
     print("parabéns seu peso esta normal!")
 elif imc > 24.9 and imc <= 29.9:
-    print("Cuidado. Você esta com obesidade grau I!")
+    print("Cuidado!! Você esta com obesidade grau I!")
 elif imc > 29.9 and imc <= 39.9:
     print("Atenção. Você esta com obesidade grau II!")
 else:
-    print("URGENTE. Você esta com obesidade grau IIi OU MÓRBIDA!")
+    print("URGENTE. Você esta com obesidade grau III OU MÓRBIDA!")
