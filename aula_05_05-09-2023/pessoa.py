@@ -13,7 +13,17 @@ class Pessoa:
         return self.name 
 
     def getAge(self):
-        return self.age 
+        return self.age
+
+    def printPerson(self):
+      
+        print('\n  \n  \n  \n  \n \n  \n  \n  \n  \n');
+        print(self.name,', Seja muito bem vindo(a) ao SUPER curso de Python!');
+        print('----------------------------------------------------------------');
+        print('############### DADOS FORNECIDOS PARA O CADASTR0 ###############')
+        print('----------------------------------------------------------------');
+        print('Nome: ', self.name)
+        print('Idade: ', str(self.age)) 
 
 
         

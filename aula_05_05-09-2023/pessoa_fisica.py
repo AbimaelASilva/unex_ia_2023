@@ -1,7 +1,8 @@
 from pessoa import Pessoa
 
 class PessoaFisica(Pessoa):
-    def __init__(self, cpfParam):
+    def __init__(self, cpfParam, name, age):
+        super().__init__(name,age) #Constructor da superclasse -Pessoa       
         self.CPF = cpfParam
         
 
@@ -11,5 +12,7 @@ class PessoaFisica(Pessoa):
     def getCPF(self):
         return self.CPF 
 
-
+    def printPF(self):
+        self.printPerson()
+        print('CNPJ: ', self.CPF);
         
