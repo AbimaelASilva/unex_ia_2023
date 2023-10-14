@@ -1,12 +1,13 @@
 import speech_recognition as speechRecog
 from playsound import playsound
-import pyttsx3
 from gtts import gTTS
 import os
 
+from consume_API_repository import ConsumeAPIRepository
+
 
 recognition = speechRecog.Recognizer()
-engine = pyttsx3.init()
+
 
 
 with speechRecog.Microphone() as source:
@@ -15,14 +16,11 @@ with speechRecog.Microphone() as source:
     audio = recognition.listen(source)
 
     text = recognition.recognize_google(audio, language="pt-BR")
-
-    # engine.say(text)
-
-    # engine.runAndWait()
+ 
 
     try:
         print("Você disse: " + text.capitalize())
-    except:
+    except FileNotFoundError:
         print("Não foi possível compreender o audio")
 
     tts = gTTS(text, lang="pt-BR", slow=False)
@@ -34,3 +32,5 @@ with speechRecog.Microphone() as source:
     playsound(audio_file)
 
     os.remove(audio_file)
+
+    ConsumeAPIRepository()
