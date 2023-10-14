@@ -9,17 +9,17 @@ class Month:
         self.averageTemperature = averageTemperature
         self.monthNumber = monthNumber
 
-#Setters
+    # Setters
     def setMonthName(self, name):
         self.name = name
 
     def setAverageTemperature(self, averageTemperature):
         self.averageTemperature = averageTemperature
-    
+
     def setMonthNumber(self, monthNumber):
         self.name = monthNumber
 
-#Getters
+    # Getters
     def getMonthName(self):
         return self.name
 
@@ -29,8 +29,7 @@ class Month:
     def getMonthNumber(self):
         return self.monthNumber
 
-
     def printMonth(self):
         print("----------------------------------------------------------------")
         print("Temperatura média: ", str(self.averageTemperature))
-        print(self.monthNumber," -", self.name)
+        print(self.monthNumber, " -", self.name)
