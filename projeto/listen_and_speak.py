@@ -5,9 +5,11 @@ import os
 
 
 class ListenAndSpeak:
+    def __init__(self, termSearch):
+        self.termSearch = termSearch
+     
     recognition = speechRecog.Recognizer()
-
-    text = ""
+   
 
     def listenF(self):
         with speechRecog.Microphone() as source:
@@ -16,9 +18,9 @@ class ListenAndSpeak:
 
                 audio = self.recognition.listen(source)
 
-                self.text = self.recognition.recognize_google(audio, language="pt-BR")
-                print("Você disse: " + self.text.capitalize())
-                return self.text
+                text = self.recognition.recognize_google(audio, language="pt-BR")
+                print("Você disse: " + text.capitalize())
+                return text
             
             except FileNotFoundError:
                 return {"error": "Erro na captura da fala em [ListenAndSpeak/listenF]!"}
@@ -28,7 +30,7 @@ class ListenAndSpeak:
 
     def speakF(self):
         try:
-            tts = gTTS(self.text, lang="pt-BR", slow=False)
+            tts = gTTS(self.termSearch, lang="pt-BR", slow=False)
 
             audio_file = os.path.dirname(__file__) + "audio.mp3"
 
